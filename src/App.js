@@ -78,7 +78,7 @@ function App() {//parent component
       <div className="App-container">
           <h1>TO-DO-LIST</h1>
           <form >
-              <input onChange={(e)=>{setValue(e.target.value);}}></input>
+              <input onChange={(e)=>{setValue(e.target.value);}} placeholder={"Write To-Do..."} ></input>
               <Button type="submit" variant="light" onClick={addTodo} >Add</Button>{' '}
           </form>
           <ol>
