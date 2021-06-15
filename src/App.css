@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+}
+html, body{
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn
+{
+  margin: 0.2rem;
+}
+.card
+{
+  margin: 0.5rem;
+  color: white;
+  display: flex;
+  width: 50vw;
+  border: none;
+}
+.card-body
+{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+.text-content
+{
+  display: flex;
+  flex: 1 1 60%;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.card-title
+{
+  display: flex;
+  justify-content: flex-start;
+          
+}
+.card-text
+{
+  display: flex;
+  justify-content: flex-start;
+}
+.button-content
+{
+  
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 40%;
+  align-items: center;
+  flex-wrap: nowrap;
+            
+}
+.App-container
+{
+  background-color: #49BEB7;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  width: 80vw;
+  height: 90vh;
+  box-shadow: 5px 10px #888888;
+}
+input
+{
+  padding: 0.1rem;
+  width: 17rem;
+}
+form
+{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 1.5rem;
+  width: 30vw;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+ol
+{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 45rem;
+  height: 60vh;
+  padding-right: 40px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+ol::-webkit-scrollbar{
+  display:none;
+}
+h1
+{
+  text-shadow: 1px 1px 5px;
+  
+}
