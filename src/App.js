@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Button from 'react-bootstrap/Button'
@@ -10,6 +10,11 @@ function App() {//parent component
   var [value,setValue]=useState("");
   var [array,setArray]=useState([]);
   //since this component has two states both of them needs to be updates to re-render this component
+  useEffect(() => {
+    setArray(JSON.parse(localStorage.getItem("data")));
+
+  },[])
+  
   function addTodo(event)//adds a to-do to the list
   {
     event.preventDefault();
@@ -21,8 +26,11 @@ function App() {//parent component
         completed: false
       }
       list.push(inputObject)
+      localStorage.setItem("data",JSON.stringify(list));
+      
       setArray(list);
       setValue("");
+      
       //both the states are updated for re-render
     }
   }
@@ -30,6 +38,7 @@ function App() {//parent component
   {
     const list =array;
     const result=list.filter((value,i) => i!==index )
+    localStorage.setItem("data",JSON.stringify(result));
     setArray(result);
   }
   
@@ -42,7 +51,8 @@ function App() {//parent component
     {
       const list=array;
       list[index].completed=!list[index].completed;
-      setStatus(list[index].completed)   
+      setStatus(list[index].completed);
+      localStorage.setItem("data",JSON.stringify(list));   
       setArray(list);
     }   
     var cardColor=status ? "#607D3B":"#E2252B"
@@ -78,7 +88,7 @@ function App() {//parent component
       <div className="App-container">
           <h1>TO-DO-LIST</h1>
           <form >
-              <input onChange={(e)=>{setValue(e.target.value);}} placeholder={"Write To-Do..."} ></input>
+              <input value={value} onChange={(e)=>{setValue(e.target.value);}} placeholder={"Write To-Do..."} ></input>
               <Button type="submit" variant="light" onClick={addTodo} >Add</Button>{' '}
           </form>
           <ol>
