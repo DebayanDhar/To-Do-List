@@ -74,8 +74,10 @@ input
 {
   padding: 0.1rem;
   width: 17rem;
+  height: 2.6rem;
   border-radius: 0.5rem;
   border: none;
+  outline-width: 0;
 }
 form
 {
@@ -94,17 +96,19 @@ ul{
 ol
 {
   display: flex;
+  flex: 1;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   width: 45rem;
   height: 60vh;
   padding-right: 40px;
+  overflow: scroll;
   overflow-x: hidden;
-  overflow-y: scroll;
+  
 }
 ol::-webkit-scrollbar{
-  display:none;
+  display: none;
 }
 h1
 {
